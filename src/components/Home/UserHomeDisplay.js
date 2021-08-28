@@ -6,10 +6,10 @@ import IdList from "./IdList";
 
 export default function UserHomeDisplay(props) {
 
-  const tempAccount = {
-    'discord': [
+  const tempAccounts = {
+    'twitch': [
       {
-        'type': 'discord',
+        'type': 'twitch',
         'name': 'username 1',
         'link': 'link 1',
         'descriptionPublic': 'account desc pub 1',
@@ -17,7 +17,7 @@ export default function UserHomeDisplay(props) {
         'id': '1'
       },
       {
-        'type': 'discord',
+        'type': 'twitch',
         'name': 'username 2',
         'link': 'link 2',
         'descriptionPublic': 'account desc pub 2',
@@ -29,7 +29,7 @@ export default function UserHomeDisplay(props) {
       {
         'type': 'twitter',
         'name': 'username 3',
-        'link': 'link 3',
+        'link': 'https://reactjs.org/tutorial/tutorial.html',
         'descriptionPublic': 'account desc pub 3',
         'descriptionPrivate': 'account desc pri 3',
         'id': '3'
@@ -37,10 +37,10 @@ export default function UserHomeDisplay(props) {
     ]
   };
 
-  const tempID = [
+  const tempIDs = [
     {
       'name': 'my first name',
-      'accounts': [ tempAccount.twitter[0], tempAccount.discord[1] ],
+      'accounts': [ tempAccounts.twitter[0], tempAccounts.twitch[1] ],
       'descriptionPublic': 'desc pub',
       'descriptionPrivate': 'desc pri',
       'id': '10'
@@ -51,10 +51,10 @@ export default function UserHomeDisplay(props) {
     <Container>
       <Row>
         <Col xs={12} md={6}>
-          <IdList ids={tempID}/>
+          <IdList ids={tempIDs}/>
         </Col>
         <Col xs={12} md={6}>
-          <AccountList accounts={tempAccount}/>
+          <AccountList accounts={tempAccounts}/>
         </Col>
       </Row>
     </Container>

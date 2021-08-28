@@ -1,10 +1,12 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import { useHistory } from "react-router";
 
 import { SITES } from "../../constants/Constants";
 
 export default function Id(props) {
   
+  const history = useHistory();
   const data = props.data;
 
   return (
@@ -12,6 +14,12 @@ export default function Id(props) {
       <div>
         <div class="id-name">
           {data.name}
+        </div>
+        <div>
+          <span class="fa fa-link"/>
+          <span class="fa fa-external-link" onClick={() => history.push(`/id/${data.id}`)}/>
+          <span class="fa fa-edit"/>
+          <span class="fa fa-trash"/>
         </div>
       </div>
       <div class="id-description-public">
@@ -21,7 +29,9 @@ export default function Id(props) {
         {data.accounts.map((account) => (
           <div>
             <span class={`fa fa-${SITES[account.type].icon}`}/>
-            {account.name}
+            <a href={account.link} class="account-link" target="_blank">
+              {account.name}
+            </a>
           </div>
         ))}
       </div>

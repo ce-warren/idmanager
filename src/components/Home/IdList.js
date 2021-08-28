@@ -8,7 +8,12 @@ export default function IdList(props) {
   return (
     <div>
       <div>
-        IDs
+        <div>
+          IDs
+        </div>
+        <div>
+          <span class="fa fa-plus"/>
+        </div>
       </div>
       <div>
         {ids.map((id) => (
